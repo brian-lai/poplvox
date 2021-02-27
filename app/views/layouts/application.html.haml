@@ -9,3 +9,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = yield
+
+-flash.each do |key, value|
+  :javascript
+    toastr["#{key}"]("#{escape_javascript(value.to_s)}")

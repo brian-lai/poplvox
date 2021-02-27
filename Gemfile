@@ -28,6 +28,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Devise Authentication system
 gem 'devise'
 
+gem 'toastr-rails'
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
