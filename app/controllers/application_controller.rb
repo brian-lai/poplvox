@@ -1,3 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  def health
+    head :ok, content_type: 'text/html'
+  end
 end
