@@ -10,6 +10,14 @@
 # Ignore ENV variable file
 /.env
 
+# IDE files
+*.iml
+*.swp
+.idea/
+
+# Node modules
+node_modules/
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
