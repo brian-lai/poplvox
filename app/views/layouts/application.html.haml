@@ -8,8 +8,13 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     %link{href: "https://fonts.googleapis.com/icon?family=Material+Icons", rel: "stylesheet"}/
+    %link{href: "https://fonts.googleapis.com/css?family=Roboto:400", rel: "stylesheet"}
+    -# <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:400" />
+
   %body
-    = yield
+    .container
+      = render 'layouts/navbar'
+      = yield
 
 -flash.each do |key, value|
   :javascript

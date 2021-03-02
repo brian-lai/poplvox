@@ -22,6 +22,12 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Rubocop for linter
+gem 'rubocop'
+
+# test launcher
+gem 'm'
+
 # Materialize style
 gem 'materialize-sass'
 
@@ -39,7 +45,7 @@ gem 'omniauth-facebook', '~> 4.0'
 # Use Omniauth Github plugin
 gem 'omniauth-github', '~> 1.1', '>= 1.1.2'
 # Use Omniauth Google plugin
-gem 'omniauth-google-oauth2', '~> 0.4.1'
+gem 'omniauth-google-oauth2', '~> 0.8.1'
 # Use Omniauth Twitter plugin
 gem 'omniauth-twitter', '~> 1.2', '>= 1.2.1'
 # Use ActiveRecord Sessions

@@ -15,5 +15,13 @@
   %br/
 - if devise_mapping.omniauthable?
   - resource_class.omniauth_providers.each do |provider|
-    = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
+    -if provider == :google_oauth2
+      = link_to omniauth_authorize_path(resource_name, provider) do
+        .google-btn{style: 'max-width: 192px;'}
+          .google-icon-wrapper
+            %img.google-icon-svg{src: "https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"}/
+          %p.btn-text
+            %b Continue with Google
+    -else
+      = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider)
     %br/

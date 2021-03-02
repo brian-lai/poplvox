@@ -1,4 +1,4 @@
-class Users::OmniauthController < ApplicationController
+class Users::OmniauthController < Devise::OmniauthCallbacksController
   # facebook callback
   def facebook
     @user = User.create_from_facebook_data(request.env['omniauth.auth'])
@@ -25,7 +25,6 @@ class Users::OmniauthController < ApplicationController
 
   # google callback
   def google_oauth2
-    binding.pry
     @user = User.create_from_google_data(request.env['omniauth.auth'])
     if @user.persisted?
       sign_in_and_redirect @user
