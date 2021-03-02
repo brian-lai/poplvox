@@ -10,6 +10,9 @@
 # Ignore ENV variable file
 /.env
 
+# Mac file store files
+.DS_Store
+
 # IDE files
 *.iml
 *.swp

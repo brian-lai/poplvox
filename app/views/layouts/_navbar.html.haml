@@ -1,60 +1,36 @@
 %nav
   .nav-wrapper
-    %a.brand-logo{href: "#"} Logo
-    %ul#nav-mobile.right.hide-on-med-and-down
+    %a.brand-logo{href: "#"}
+      %img{src: asset_path('poplvox_logo.png'), style: 'float:left;height:6vh'}
+      PoplVox
+    %a.sidenav-trigger{"data-target" => "mobile-demo", href: "#"}
+      %i.material-icons menu
+    %ul.right.hide-on-med-and-down
       %li
         %a{href: "sass.html"} Sass
       %li
         %a{href: "badges.html"} Components
       %li
-        %a{href: "collapsible.html"} JavaScript
+        %a{href: "collapsible.html"} Javascript
+      %li
+        %a{href: "mobile.html"} Mobile
       -if !user_signed_in?
         %li.right-align
           =link_to "Log In", new_user_session_path
--# %nav.red
--#   .nav-wrapper
--#     %div.brand-logo
--#       // Replace this with an image
--#       -# My Logo
--#     %a{href: "#", class: "button-collapse", data: {activates: "menuDropdown"}}
--#       %i.material-icons menu
--#     // Normal NavBar that goes across the top
--#     %ul.right.hide-on-med-and-down#menuDropdown
--#       %li
--#         =link_to "Link 1"
--#       %li
--#         = link_to "Link 2"
--#       %li
--#         = link_to "Link 3"
--#       // Drop Down Menu
--#       %li
--#         %a{href: "#", class: "dropdown-button", data: {activates: "myDropdown"}}
--#           = "Drop Down Menu"
--#           %i.material-icons.right arrow_drop_down
--#         %ul{id: "myDropdown", class: "dropdown-content"}
--#           %li
--#             = link_to "Drop Down Link 1"
--#           %li
--#             = link_to "Drop Down Link 2"
--#           %li
--#             = link_to "Drop Down Link 3"
--#     // Mobile Sidebar
--#     %ul#example.side-nav
--#       %li
--#         = link_to "Link 1"
--#       %li
--#         = link_to "Link 2"
--#       %li
--#         = link_to "Link 3"
--#       // Drow Down Menu on the mobile sidebar
--#       %li
--#         %a{href: "#", class: "dropdown-button", data: {activates: "myDropDownSide"}}
--#           = "Admin Menu"
--#           %i.material-icons.right.fix-line-height arrow_drop_down
--#         %ul{id: "myDropDownSide", class: "dropdown-content dropdown-content-sidebar-fix"}
--#           %li
--#             = link_to "Drop Down Link 1"
--#           %li
--#             = link_to "Drop Down Link 2"
--#           %li
--#             = link_to "Drop Down Link 3"
+  %ul#mobile-demo.sidenav
+    %li
+      %a{href: "sass.html"} Sass
+    %li
+      %a{href: "badges.html"} Components
+    %li
+      %a{href: "collapsible.html"} Javascript
+    %li
+      %a{href: "mobile.html"} Mobile
+    -if !user_signed_in?
+      %li.right-align
+        =link_to "Log In", new_user_session_path
+
+:javascript
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
